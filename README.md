@@ -14,7 +14,7 @@ You can start the server by running
 `node app.js `
 in the server directory of the repository.
 
-## Database
+### Database
 For this application I have created a sample database which deals with tracking of tweets similar to the one created on twitter.
 Since, the inspiration was taken from twitter, the database name used is "twitter" and in order to track the tweets, the following schema has been created
 
@@ -35,7 +35,8 @@ This collection will allow us to keep track of the tweet created by the user. Tr
 
 ### APIs
 For this application 6 APIs were created
-**Insert**
+
+#### Insert
 You can access it using the url "http://localhost:3000/insert".
 This is a POST API whose sample request JSON is:
 {
