@@ -37,9 +37,9 @@ This collection will allow us to keep track of the tweet created by the user. Tr
 For this application 6 APIs were created
 
 #### Insert
-You can access it using the url "http://localhost:3000/insert".
+You can access it using the url `http://localhost:3000/insert`.
 This is a POST API whose sample request JSON is:
-{
+`{
       "data":{
         "name":"nazneen",
         "tweet":"I love this application",
@@ -47,13 +47,13 @@ This is a POST API whose sample request JSON is:
         "comments":56,
         "retweets":67
       }
-    }
+    }`
 This api will insert the sent data into the tweet_track collection.
 
-**Update**
-You can access it using the url "http://localhost:3000/update".
+#### Update
+You can access it using the url `http://localhost:3000/update`.
 This is a POST API whose sample request JSON is:
-{
+`{
       "data":{
         "tweet":"I love this application",
         "hearts":34,
@@ -63,29 +63,29 @@ This is a POST API whose sample request JSON is:
       "where":{
         "name":"nazneen"
       }
-    }
+    }`
 This api will update the collection where name is nazneen in tweet_track collection.
 
-**Delete**
-You can access it using the url "http://localhost:3000/delete".
+#### Delete
+You can access it using the url `http://localhost:3000/delete`.
 This is a POST API whose sample request JSON is:
-{
+`{
       "data":{
         "name":"nazneen"
       }
-    }
+    }`
 This api will delete the index where name is nazneene in the tweet_track collection.
 
-**all**
-You can access it using the url "http://localhost:3000/all".
+#### all
+You can access it using the url `http://localhost:3000/all`.
 This is a GET API which will return all the indexes in the tweet_api collection.
 
-### searchRetweets**
-You can access it using the url "http://localhost:3000/searchRetweets".
+#### searchRetweets
+You can access it using the url `http://localhost:3000/searchRetweets`.
 This is a GET API which will return all the indexes by sorting the indexes using retweets in ascending order in the tweet_api collection.
 
-### searchComments
-You can access it using the url "http://localhost:3000/searchComments".
+#### searchComments
+You can access it using the url `http://localhost:3000/searchComments`.
 This is a GET API which will return top 5 tweets with highest comment count in the tweet_api collection
 
  
