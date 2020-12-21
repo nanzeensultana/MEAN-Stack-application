@@ -51,14 +51,7 @@ columns: {
 
   }
   ngOnInit(){
-    let req_data ={
-      "action":"search",
-      "data":{
-        "runs":"1"
-      },
-      "limit":0
-    }
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
+    this.http.get('http://localhost:3000/all').subscribe((dat)=>{
       this.data=dat;
 
     })
@@ -66,7 +59,6 @@ columns: {
   }
   onCreateConfirm(event){
     let req_data={
-      "action":"insert",
       "data":{
         "name":event.newData.name,
         "tweet":event.newData.tweet,
@@ -77,7 +69,7 @@ columns: {
       "limit":0
     }
 
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
+    this.http.post('http://localhost:3000/insert',req_data).subscribe((dat)=>{
       event.confirm.resolve();
 
     })
@@ -85,13 +77,12 @@ columns: {
 
   onDeleteConfirm(event){
     let req_data={
-      "action":"delete",
-      "where":{
+      "data":{
         "name":event.data.name
       },
       "limit":0
     }
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
+    this.http.post('http://localhost:3000/delete',req_data).subscribe((dat)=>{
       event.confirm.resolve();
 
     })
@@ -99,7 +90,6 @@ columns: {
 
   onEditConfirm(event){
     let req_data={
-      "action":"update",
       "data":{
         "tweet":event.newData.tweet,
         "hearts":event.newData.hearts,
@@ -108,11 +98,10 @@ columns: {
       },
       "where":{
         "name":event.data.name
-      },
-      "limit":0
+      }
     }
 
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
+    this.http.post('http://localhost:3000/update',req_data).subscribe((dat)=>{
       event.confirm.resolve();
 
     })
@@ -127,37 +116,14 @@ columns: {
       "limit":0
     }
 
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
-      this.data=dat
-
-    })
-  }
-
-  retweetSortDsc(){
-    let req_data={
-      "action":"search",
-      "data":{
-        "retweets":"-1"
-      },
-      "limit":0
-    }
-
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
+    this.http.get('http://localhost:3000/searchRetweets').subscribe((dat)=>{
       this.data=dat
 
     })
   }
 
   TopComments(){
-    let req_data={
-      "action":"search",
-      "data":{
-        "comments":"-1"
-      },
-      "limit":5
-    }
-
-    this.http.post('http://localhost:3000/action',req_data).subscribe((dat)=>{
+    this.http.get('http://localhost:3000/searchComments').subscribe((dat)=>{
       this.data=dat
 
     })
