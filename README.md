@@ -9,18 +9,18 @@ This is a complete MEAN (Mongo, Express, Angular and Node).
 The client folder contains the angular code for the application ui
 The server folder contains the backend code dealing with data modification using node,express and mongodb.
 
-**Server**
+## Server
 You can start the server by running
-node app.js 
+`node app.js `
 in the server directory of the repository.
 
-**Database**
+## Database
 For this application I have created a sample database which deals with tracking of tweets similar to the one created on twitter.
 Since, the inspiration was taken from twitter, the database name used is "twitter" and in order to track the tweets, the following schema has been created
 
 collection Name: tweet_track
 fields structure:
-|- name
+`|- name
   |- String
 |- tweet
   |-String
@@ -30,10 +30,10 @@ fields structure:
   |-Number
 |- comments
   |-Number
-
+`
 This collection will allow us to keep track of the tweet created by the user. Tracking with respect to tracking the number of retweets, number of hearts on the tweet and number of comments made on the tweet
 
-**APIs**
+### APIs
 For this application 6 APIs were created
 **Insert**
 You can access it using the url "http://localhost:3000/insert".
@@ -79,22 +79,20 @@ This api will delete the index where name is nazneene in the tweet_track collect
 You can access it using the url "http://localhost:3000/all".
 This is a GET API which will return all the indexes in the tweet_api collection.
 
-**searchRetweets**
+### searchRetweets**
 You can access it using the url "http://localhost:3000/searchRetweets".
 This is a GET API which will return all the indexes by sorting the indexes using retweets in ascending order in the tweet_api collection.
 
-**searchComments**
+### searchComments
 You can access it using the url "http://localhost:3000/searchComments".
 This is a GET API which will return top 5 tweets with highest comment count in the tweet_api collection
 
+ 
+## Client
+As mentioned earlier, the client side contains the code for the application UI. To create the ui angular framework was used.
 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-
-**Client**
-As mentioned earlier, the client side contains the code for the application UI. To create the ui angular framework was used. 
-You can start the clien by running the command:
-ng serve
-in the client directory of this repository.
 
 The UI contains simple table created by akveo called ng2-smart-table.
 The link to the library is as followed:
